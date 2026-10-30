@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edwin Madruñero | Senior Full Stack Engineer</title>
+<meta name="description" content="Senior Full Stack Engineer con más de 10 años en Java, Spring Boot, Angular y PostgreSQL. Arquitectura limpia, microservicios y modernización de sistemas legacy. Ibarra, Ecuador. Disponible para trabajo remoto.">
+<meta name="keywords" content="Senior Full Stack Engineer, Java, Spring Boot, Angular, Microfrontends, NgRx, Signals, PostgreSQL, Oracle, SQL Server, Microservicios, Clean Architecture, Remoto LATAM, Ecuador">
+<meta name="author" content="Edwin Ramiro Madruñero Padilla">
+<meta property="og:title" content="Edwin Madruñero | Senior Full Stack Engineer">
+<meta property="og:description" content="Java, Spring Boot y Angular. Más de 10 años construyendo y modernizando sistemas críticos.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="emadrunero.png">
+<meta name="theme-color" content="#0b1220">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Edwin Ramiro Madruñero Padilla",
+  "jobTitle": "Senior Full Stack Engineer",
+  "address": {"@type": "PostalAddress", "addressLocality": "Ibarra", "addressCountry": "EC"},
+  "email": "mailto:madruedwin@gmail.com",
+  "url": "https://emadrunero.github.io",
+  "sameAs": ["https://github.com/emadrunero"],
+  "alumniOf": "Universidad Técnica del Norte",
+  "knowsAbout": ["Java","Spring Boot","Angular","PostgreSQL","Oracle","SQL Server","Microservicios","Clean Architecture","Python"]
+}
+</script>
+<style>
+:root{
+  --bg:#f6f7fb; --bg-2:#ffffff; --ink:#0e1525; --ink-2:#465169; --muted:#7a849a;
+  --line:#e3e7ef; --accent:#2f6bff; --accent-2:#00b39b; --accent-soft:#e7eeff;
+  --card:#ffffff; --shadow:0 1px 2px rgba(14,21,37,.04),0 8px 24px rgba(14,21,37,.06);
+  --radius:16px; --max:1120px;
+}
+:root[data-theme="dark"]{
+  --bg:#0b1220; --bg-2:#0f182a; --ink:#e8ecf5; --ink-2:#a9b3c9; --muted:#7884a0;
+  --line:#1d2840; --accent:#6c97ff; --accent-2:#2fd6bd; --accent-soft:#16223d;
+  --card:#111b2f; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1220; --bg-2:#0f182a; --ink:#e8ecf5; --ink-2:#a9b3c9; --muted:#7884a0;
+    --line:#1d2840; --accent:#6c97ff; --accent-2:#2fd6bd; --accent-soft:#16223d;
+    --card:#111b2f; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.15;letter-spacing:-.02em}
+.mono{font-family:"JetBrains Mono",monospace}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:18px;display:flex;align-items:center;gap:10px}
+.brand span{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--ink);color:var(--bg);font-size:14px}
+.menu{display:flex;gap:26px;font-size:14px;color:var(--ink-2)}
+.menu a:hover{color:var(--accent)}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.icon-btn{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--bg-2);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.icon-btn svg{width:18px;height:18px}
+.burger{display:none}
+@media (max-width:860px){
+  .menu{position:fixed;inset:64px 0 auto 0;flex-direction:column;gap:0;background:var(--bg-2);border-bottom:1px solid var(--line);padding:8px 20px;transform:translateY(-120%);transition:transform .25s ease;}
+  .menu a{padding:14px 0;border-bottom:1px solid var(--line)}
+  .menu a:last-child{border:0}
+  .menu.open{transform:none}
+  .burger{display:grid}
+}
+
+/* HERO */
+.hero{padding:72px 0 56px;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 300px at 85% 10%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 70%),radial-gradient(500px 260px at 0% 90%,color-mix(in srgb,var(--accent-2) 12%,transparent),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:48px;align-items:center;position:relative}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;padding:6px 12px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
+.status i{width:8px;height:8px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 4px color-mix(in srgb,var(--accent-2) 25%,transparent)}
+.hero h1{font-size:clamp(38px,6vw,64px);margin:20px 0 14px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.role{font-size:clamp(17px,2.2vw,20px);color:var(--ink-2);max-width:620px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:18px;margin:22px 0 30px;color:var(--muted);font-size:14px}
+.hero-meta span{display:flex;align-items:center;gap:6px}
+.hero-meta svg{width:16px;height:16px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 20px;border-radius:12px;font-weight:600;font-size:15px;transition:transform .15s,box-shadow .15s;border:1px solid transparent}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px color-mix(in srgb,var(--accent) 35%,transparent)}
+.btn-ghost{border-color:var(--line);background:var(--bg-2)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.photo-card{position:relative;justify-self:center;width:min(320px,100%)}
+.photo{aspect-ratio:4/5;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow);display:grid;place-items:center;color:#fff;font-family:"Space Grotesk";font-size:72px;font-weight:700}
+.photo img{width:100%;height:100%;object-fit:cover}
+.badge-float{position:absolute;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;box-shadow:var(--shadow);font-size:13px}
+.badge-float b{display:block;font-family:"Space Grotesk";font-size:22px;color:var(--accent)}
+.bf-1{left:-28px;bottom:40px}
+.bf-2{right:-20px;top:30px}
+@media (max-width:860px){
+  .hero{padding:44px 0 40px}
+  .hero-grid{grid-template-columns:1fr;gap:40px}
+  .photo-card{order:-1;width:220px}
+  .bf-1{left:-36px}.bf-2{right:-36px}
+}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:8px}
+.stat{background:var(--bg-2);padding:22px}
+.stat b{font-family:"Space Grotesk";font-size:30px;display:block}
+.stat span{color:var(--muted);font-size:13px}
+@media (max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* SECTIONS */
+section{padding:80px 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:36px}
+.sec-head .num{color:var(--accent);font-size:14px}
+.sec-head h2{font-size:clamp(28px,4vw,38px)}
+.lead{font-size:18px;color:var(--ink-2);max-width:760px}
+.alt{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+@media (max-width:700px){section{padding:56px 0}}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px}
+.pillars{display:grid;gap:14px}
+.pillar{padding:18px;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+.pillar h3{font-size:16px;margin-bottom:4px}
+.pillar p{font-size:14px;color:var(--ink-2)}
+@media (max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+/* TIMELINE */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.job{position:relative;margin-bottom:28px;padding:26px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);box-shadow:var(--shadow)}
+.job::before{content:"";position:absolute;left:-28px;top:30px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.job.current::before{background:var(--accent)}
+.job-top{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.job h3{font-size:20px}
+.date{font-size:13px;color:var(--muted);white-space:nowrap}
+.org{color:var(--accent);font-weight:600;font-size:15px;margin-bottom:6px}
+.note{font-size:13px;color:var(--ink-2);background:var(--accent-soft);display:inline-block;padding:4px 10px;border-radius:8px;margin-bottom:12px}
+.job ul{list-style:none;display:grid;gap:8px}
+.job li{position:relative;padding-left:18px;color:var(--ink-2);font-size:15px}
+.job li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:2px;background:var(--accent-2)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.tag{font-family:"JetBrains Mono",monospace;font-size:12px;padding:4px 9px;border-radius:7px;background:var(--accent-soft);color:var(--accent)}
+
+/* ACHIEVEMENTS */
+.ach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.ach{padding:24px;border-radius:var(--radius);border:1px solid var(--line);background:var(--card);display:flex;gap:16px}
+.ach .ico{flex:0 0 44px;height:44px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.ach .ico svg{width:22px;height:22px}
+.ach p{color:var(--ink-2);font-size:15px}
+.ach h3{font-size:17px;margin-bottom:4px}
+@media (max-width:700px){.ach-grid{grid-template-columns:1fr}}
+
+/* STACK */
+.stack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stack{padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+.stack h3{font-size:15px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;font-family:Inter}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;padding:6px 11px;border-radius:9px;border:1px solid var(--line);background:var(--bg)}
+@media (max-width:900px){.stack-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.stack-grid{grid-template-columns:1fr}}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.proj{padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.proj:hover{transform:translateY(-4px);border-color:var(--accent)}
+.proj .kind{font-size:12px;color:var(--accent-2);font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.proj h3{font-size:18px;margin:8px 0 6px}
+.proj p{color:var(--ink-2);font-size:14px;flex:1}
+.proj .role-tag{font-size:13px;color:var(--muted);margin-top:12px}
+.proj.featured{grid-column:span 3;display:grid;grid-template-columns:1fr 1fr;gap:20px;background:linear-gradient(135deg,var(--card),var(--accent-soft))}
+.repo{padding:18px;border-radius:12px;border:1px solid var(--line);background:var(--bg-2);display:block}
+.repo:hover{border-color:var(--accent)}
+.repo b{font-family:"JetBrains Mono",monospace;font-size:14px;color:var(--accent);display:flex;align-items:center;gap:8px}
+.repo b svg{width:16px;height:16px}
+.repo span{display:block;font-size:14px;color:var(--ink-2);margin-top:6px}
+@media (max-width:900px){.proj-grid{grid-template-columns:repeat(2,1fr)}.proj.featured{grid-column:span 2;grid-template-columns:1fr}}
+@media (max-width:600px){.proj-grid{grid-template-columns:1fr}.proj.featured{grid-column:span 1}}
+
+/* EDUCATION */
+.edu-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px}
+.degree{padding:22px;border-left:3px solid var(--accent);background:var(--card);border-radius:0 14px 14px 0;margin-bottom:14px;border-top:1px solid var(--line);border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.degree h3{font-size:18px}
+.degree p{color:var(--ink-2);font-size:14px}
+.certs{list-style:none;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden}
+.certs li{display:flex;justify-content:space-between;gap:12px;padding:13px 18px;border-bottom:1px solid var(--line);font-size:14px}
+.certs li:last-child{border:0}
+.certs li span:last-child{color:var(--muted);white-space:nowrap;font-size:13px}
+.lang{display:flex;gap:12px;margin-top:14px;flex-wrap:wrap}
+.lang div{flex:1;min-width:140px;padding:14px 18px;border:1px solid var(--line);border-radius:12px;background:var(--card);font-size:14px}
+.lang b{display:block;font-family:"Space Grotesk"}
+@media (max-width:860px){.edu-grid{grid-template-columns:1fr}}
+
+/* CONTACT */
+.contact{background:var(--ink);color:var(--bg);border-radius:24px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.contact h2{font-size:clamp(28px,4vw,40px);margin-bottom:12px}
+.contact p{opacity:.75}
+.contact-links{display:grid;gap:10px}
+.contact-links a{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:12px;border:1px solid color-mix(in srgb,var(--bg) 20%,transparent);font-size:15px;transition:background .2s}
+.contact-links a:hover{background:color-mix(in srgb,var(--bg) 10%,transparent)}
+.contact-links svg{width:18px;height:18px;flex:0 0 18px}
+@media (max-width:860px){.contact{grid-template-columns:1fr;padding:32px 24px}}
+
+footer{padding:32px 0;text-align:center;color:var(--muted);font-size:13px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+/* PRINT */
+@media print{
+  .nav,.cta,.photo-card,.badge-float,footer,#theme{display:none!important}
+  body{background:#fff;color:#000;font-size:12px}
+  section,.hero{padding:16px 0}
+  .reveal{opacity:1;transform:none}
+  .job,.ach,.stack,.proj,.pillar{box-shadow:none;break-inside:avoid}
+  .contact{background:#fff;color:#000;border:1px solid #ccc;padding:16px}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#inicio" class="brand"><span>EM</span>Edwin Madruñero</a>
+    <nav class="menu" id="menu">
+      <a href="#perfil">Perfil</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#stack">Stack</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#formacion">Formación</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="theme" aria-label="Cambiar tema">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <button class="icon-btn burger" id="burger" aria-label="Abrir menú">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="status"><i></i>Disponible para trabajo remoto LATAM y global</span>
+        <h1>Edwin <em>Madruñero</em></h1>
+        <p class="role">Senior Full Stack Engineer &amp; Tech Lead. Construyo y modernizo sistemas críticos con Java, Spring Boot y Angular.</p>
+        <div class="hero-meta">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-6.1 7-12a7 7 0 1 0-14 0c0 5.9 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Ibarra, Ecuador</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>MSc. Ingeniería de Software</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Incorporación inmediata</span>
+        </div>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:madruedwin@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Contactar
+          </a>
+          <a class="btn btn-ghost" href="cv.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Descargar CV
+          </a>
+          <a class="btn btn-ghost" href="https://github.com/emadrunero" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>GitHub
+          </a>
+        </div>
+      </div>
+      <div class="photo-card">
+        <div class="photo"><img src="emadrunero.png" alt="Edwin Madruñero" onerror="this.remove();this.parentNode.textContent='EM'"></div>
+        <div class="badge-float bf-1"><b>+10</b>años en desarrollo</div>
+        <div class="badge-float bf-2"><b>v8→v19</b>Angular en producción</div>
+      </div>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat"><b>+10</b><span>años de experiencia full stack</span></div>
+      <div class="stat"><b>3</b><span>organizaciones del sector público y energía</span></div>
+      <div class="stat"><b>5</b><span>proyectos liderados o desarrollados de punta a punta</span></div>
+      <div class="stat"><b>MSc.</b><span>Ingeniería de Software</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PERFIL -->
+<section id="perfil" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num mono">01</span><h2>Perfil</h2></div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="lead">Ingeniero de software con más de 10 años en desarrollo full stack con Angular, Java/Spring Boot y Python.</p>
+        <p style="margin-top:16px;color:var(--ink-2)">Trabajo con Clean Architecture, microservicios y sistemas orientados a eventos. He liderado equipos técnicos y modernizado sistemas legacy hacia arquitecturas escalables, con foco en rendimiento y mantenibilidad. Hoy diseño y construyo los sistemas académicos y administrativos de Yachay Tech, donde además soy el enlace entre negocio, usuarios funcionales y el equipo de desarrollo.</p>
+      </div>
+      <div class="pillars reveal">
+        <div class="pillar"><h3>Backend</h3><p>APIs REST en Spring Boot para procesos de alta concurrencia como matrícula y calificaciones.</p></div>
+        <div class="pillar"><h3>Frontend</h3><p>Angular con Standalone, Signals, NgRx y microfrontends. Migraciones de v8 a v19+.</p></div>
+        <div class="pillar"><h3>Datos</h3><p>Modelado y optimización de consultas en PostgreSQL, Oracle y SQL Server.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num mono">02</span><h2>Experiencia</h2></div>
+    <div class="timeline">
+      <article class="job current reveal">
+        <div class="job-top"><h3>Senior Full Stack Developer | Software Architect</h3><span class="date mono">Oct 2016 · Actualidad</span></div>
+        <div class="org">Universidad de Investigación de Tecnología Experimental Yachay Tech</div>
+        <span class="note">Incluye encargo como Director de Registros Académicos (oct. 2021 · jun. 2022)</span>
+        <ul>
+          <li>Lidero el diseño y desarrollo backend de soluciones académicas y administrativas de alta criticidad, con APIs REST en Spring Boot.</li>
+          <li>Lidero el frontend con Angular (v8 a v19+), migrando componentes legacy y mejorando la experiencia de usuario en procesos académicos críticos.</li>
+          <li>Optimizo consultas SQL y modelado de datos en PostgreSQL y Oracle para matrícula, calificaciones y planificación académica.</li>
+          <li>Defino estándares de calidad, versionamiento, planes de pruebas y monitoreo para sistemas en producción.</li>
+          <li>Como Director encargado, planifiqué y evalué la implementación de software para áreas académicas y administrativas, y coordiné las políticas de seguridad y respaldo de los sistemas institucionales.</li>
+          <li>Lidero equipos multidisciplinarios y actúo como enlace técnico entre negocio, usuarios funcionales y desarrollo.</li>
+        </ul>
+        <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Angular</span><span class="tag">PostgreSQL</span><span class="tag">Oracle</span><span class="tag">REST</span></div>
+      </article>
+
+      <article class="job reveal">
+        <div class="job-top"><h3>Full Stack Developer | Software Engineer</h3><span class="date mono">Oct 2014 · Sep 2016</span></div>
+        <div class="org">Empresa Eléctrica Quito</div>
+        <ul>
+          <li>Desarrollé y mantuve aplicaciones enterprise con Java, PHP y Oracle Forms, incluyendo mejoras en módulos financieros críticos.</li>
+          <li>Diseñé estructuras de base de datos y documentación técnica; participé en la evolución arquitectónica de sistemas legacy.</li>
+        </ul>
+        <div class="tags"><span class="tag">Java</span><span class="tag">PHP</span><span class="tag">Oracle Forms</span><span class="tag">Oracle</span></div>
+      </article>
+
+      <article class="job reveal">
+        <div class="job-top"><h3>Full Stack Developer | Java Developer</h3><span class="date mono">Mar 2012 · Oct 2014</span></div>
+        <div class="org">Empresa Eléctrica Regional Norte (EMELNORTE)</div>
+        <ul>
+          <li>Desarrollé aplicaciones Java web con JSF y PrimeFaces, e implementé servicios web y nuevas funcionalidades sobre Oracle Forms/APEX.</li>
+          <li>Diseñé bases de datos y apoyé la evolución arquitectónica de sistemas internos.</li>
+        </ul>
+        <div class="tags"><span class="tag">Java</span><span class="tag">JSF</span><span class="tag">PrimeFaces</span><span class="tag">Oracle APEX</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LOGROS -->
+<section class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num mono">03</span><h2>Logros clave</h2></div>
+    <div class="ach-grid">
+      <div class="ach reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h6v6H4zM14 14h6v6h-6z"/><path d="M10 7h4a3 3 0 0 1 3 3v4"/></svg></div>
+        <div><h3>Modernización legacy</h3><p>Lideré la migración de Oracle Forms a Spring Boot en procesos académicos críticos.</p></div>
+      </div>
+      <div class="ach reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6 4 4 6-8"/></svg></div>
+        <div><h3>APIs de alta concurrencia</h3><p>Diseñé APIs REST para matrícula y calificaciones, los procesos con más carga de la institución.</p></div>
+      </div>
+      <div class="ach reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+        <div><h3>Arquitectura</h3><p>Impulsé la adopción de microservicios y Clean Architecture en proyectos institucionales.</p></div>
+      </div>
+      <div class="ach reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+        <div><h3>Rendimiento de datos</h3><p>Optimicé consultas SQL y modelos de datos, mejorando el rendimiento de procesos académicos críticos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STACK -->
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num mono">04</span><h2>Stack técnico</h2></div>
+    <div class="stack-grid">
+      <div class="stack reveal"><h3>Frontend</h3><div class="chips"><span class="chip">Angular</span><span class="chip">Standalone</span><span class="chip">Signals</span><span class="chip">NgRx</span><span class="chip">Microfrontends</span><span class="chip">TypeScript</span><span class="chip">Angular Material</span></div></div>
+      <div class="stack reveal"><h3>Backend</h3><div class="chips"><span class="chip">Java 17 / 21</span><span class="chip">Spring Boot</span><span class="chip">REST APIs</span><span class="chip">Microservicios</span><span class="chip">Python</span><span class="chip">Django</span><span class="chip">Flask</span><span class="chip">FastAPI</span><span class="chip">SQLAlchemy</span></div></div>
+      <div class="stack reveal"><h3>Bases de datos</h3><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">Oracle</span><span class="chip">SQL Server</span></div></div>
+      <div class="stack reveal"><h3>Arquitectura</h3><div class="chips"><span class="chip">Clean Architecture</span><span class="chip">SOLID</span><span class="chip">Event-driven</span><span class="chip">Microfrontends</span></div></div>
+      <div class="stack reveal"><h3>DevOps / Cloud</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">CI/CD</span><span class="chip">GitHub Actions</span><span class="chip">Azure DevOps</span><span class="chip">AWS</span></div></div>
+      <div class="stack reveal"><h3>Testing · Mensajería · IA</h3><div class="chips"><span class="chip">JUnit</span><span class="chip">Mockito</span><span class="chip">Kafka</span><span class="chip">RabbitMQ</span><span class="chip">GitHub Copilot</span><span class="chip">ChatGPT</span><span class="chip">Claude</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos" class="alt">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num mono">05</span><h2>Proyectos</h2></div>
+    <div class="proj-grid">
+      <div class="proj featured reveal">
+        <div>
+          <span class="kind">Portafolio público</span>
+          <h3>Código abierto en GitHub</h3>
+          <p>Laboratorios donde aplico las arquitecturas que uso en producción.</p>
+        </div>
+        <div style="display:grid;gap:10px">
+          <a class="repo" href="https://github.com/emadrunero/angular-microfrontends-architecture-lab" target="_blank" rel="noopener">
+            <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M9 9h6v6H9z"/></svg>angular-microfrontends-architecture-lab</b>
+            <span>Microfrontends con Native Federation, NgRx, Signals y SSO.</span>
+          </a>
+          <a class="repo" href="https://github.com/emadrunero/java-clean-solid" target="_blank" rel="noopener">
+            <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>java-clean-solid</b>
+            <span>API REST con Spring Boot, Clean Architecture, SOLID, JWT y Swagger.</span>
+          </a>
+        </div>
+      </div>
+      <div class="proj reveal"><span class="kind">Fintech</span><h3>Sistema Financiero para Caja de Ahorros</h3><p>Plataforma de ahorros y créditos para Corporación Hoja Verde, desarrollada con Angular 19 y Java Spring Boot.</p><span class="role-tag">Rol: Líder de proyecto</span></div>
+      <div class="proj reveal"><span class="kind">Educación</span><h3>Sistema Académico</h3><p>Módulos de vinculación, gestión de idiomas, gestión documental con firma electrónica y validación de títulos. Angular 8 migrado a 15 con Spring Boot.</p><span class="role-tag">Rol: Full Stack</span></div>
+      <div class="proj reveal"><span class="kind">Operaciones</span><h3>Sistema de Inventarios</h3><p>Control y gestión de inventarios para AUTOLAB.</p><span class="role-tag">Rol: Líder de proyecto</span></div>
+      <div class="proj reveal"><span class="kind">Web</span><h3>Sitio Web Institucional</h3><p>Diseño y desarrollo del sitio corporativo de COCAPRODE.</p><span class="role-tag">Rol: Líder de proyecto</span></div>
+      <div class="proj reveal"><span class="kind">E-learning</span><h3>Entorno Virtual Moodle</h3><p>Configuración y puesta en marcha de la plataforma de aprendizaje virtual de COCAPRODE.</p><span class="role-tag">Rol: Líder de proyecto</span></div>
+    </div>
+    <p style="margin-top:18px;font-size:13px;color:var(--muted)">Los proyectos institucionales e independientes son de código privado.</p>
+  </div>
+</section>
+
+<!-- FORMACIÓN -->
+<section id="formacion">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="num mono">06</span><h2>Formación</h2></div>
+    <div class="edu-grid">
+      <div class="reveal">
+        <div class="degree"><h3>Magíster en Ingeniería de Software</h3><p>Universidad Técnica del Norte · 2016–2018</p></div>
+        <div class="degree"><h3>Ingeniero en Sistemas Computacionales</h3><p>Universidad Técnica del Norte · 2007–2012</p></div>
+        <div class="lang">
+          <div><b>Español</b>Nativo</div>
+          <div><b>Inglés</b>A2+ · en formación continua</div>
+        </div>
+      </div>
+      <ul class="certs reveal">
+        <li><span>Scrum Master Professional Certificate (SMPC) · CertiProf</span><span>2022</span></li>
+        <li><span>Gobernanza de TI · CEDIA</span><span>2023</span></li>
+        <li><span>Certificación en Contratación Pública · SERCOP</span><span>2024</span></li>
+        <li><span>Gestión de Proyectos · CEDIA</span><span>2024–2025</span></li>
+        <li><span>Análisis de Datos y Business Intelligence · CEDIA</span><span>2025</span></li>
+        <li><span>Análisis de Datos potenciado con IA (SQL) · CEDIA</span><span>2025</span></li>
+        <li><span>IA Generativa aplicada a la Educación · UNIR</span><span>2025</span></li>
+        <li><span>Apps Móviles con Flutter e IA · CEDIA</span><span>2025</span></li>
+        <li><span>Angular con TypeScript, Firebase y JWT · Udemy</span><span>2026</span></li>
+        <li><span>Python: Django, Flask, FastAPI · Udemy</span><span>2026</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div>
+        <h2>¿Buscas un senior Java + Angular?</h2>
+        <p>Estoy abierto a posiciones remotas en LATAM y el resto del mundo, y a roles presenciales. Puedo incorporarme de inmediato.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:madruedwin@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>madruedwin@gmail.com</a>
+        <a href="https://github.com/emadrunero" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m8 6-6 6 6 6M16 6l6 6-6 6"/></svg>github.com/emadrunero</a>
+        <a href="cv.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Descargar CV en PDF</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>© <span id="y"></span> Edwin Ramiro Madruñero Padilla · Ibarra, Ecuador</footer>
+
+<script>
+(function(){
+  var root=document.documentElement, KEY='theme';
+  try{var s=localStorage.getItem(KEY); if(s) root.setAttribute('data-theme',s);}catch(e){}
+  document.getElementById('theme').addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+    var next=cur==='dark'?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem(KEY,next);}catch(e){}
+  });
+  var menu=document.getElementById('menu');
+  document.getElementById('burger').addEventListener('click',function(){menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');});});
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
